@@ -10,7 +10,7 @@ import Edit from './components/Edit';
 
 function App() {
   
-  axios.defaults.baseURL = 'http://localhost:4019/api';
+  axios.defaults.baseURL = 'https://merntask.onrender.com/api';
   axios.defaults.withCredentials = true
 
   return <>
