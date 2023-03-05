@@ -12,6 +12,14 @@ function Profile() {
 const [user1, setUser1] = useState(null)
 const {user, setUser2} = useContext(AuthContext)
 
+let navigate = useNavigate()
+
+const token = localStorage.getItem("Authorization")
+
+if(!token){
+  navigate("/")
+}
+
 const getUser = async () => {
   try{
 if(user?._id){
@@ -34,12 +42,6 @@ if(user?._id){
 function ProfileDetails({user1}){
 
   let navigate = useNavigate()
-
-  const token = localStorage.getItem("Authorization")
-
-  if(!token){
-    navigate("/")
-  }
 
   return<>
   
