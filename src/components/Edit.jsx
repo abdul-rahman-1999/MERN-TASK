@@ -56,6 +56,10 @@ function EditForm({user}){
   let navigate = useNavigate()
 
   const token = localStorage.getItem("Authorization")
+
+  if(!token){
+    navigate("/")
+  }
     
   const {handleSubmit, values, handleChange,handleBlur,touched, errors} = useFormik({
     initialValues:{

@@ -35,6 +35,12 @@ function ProfileDetails({user1}){
 
   let navigate = useNavigate()
 
+  const token = localStorage.getItem("Authorization")
+
+  if(!token){
+    navigate("/")
+  }
+
   return<>
   
   <NavBar/>
